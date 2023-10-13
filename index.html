@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Conversor de Temperatura</h1>
+        <p>Informe a temperatura em graus Celsius (C):</p>
+        <input type="number" id="tempCelsius">
+        <button onclick="converterTemperatura()">Converter</button>
+        <div id="results">
+            <h2>Resultados:</h2>
+            <p><span id="fahrenheitResult"></span>F</p>
+            <p><span id="kelvinResult"></span>K</p>
+            <p><span id="rankineResult"></span>R</p>
+        </div>
+    </div>
+    <script>
+        function converterTemperatura() {
+            const tempCelsius = parseFloat(document.getElementById('tempCelsius').value);
+            const tempFahrenheit = (tempCelsius * 9/5) + 32;
+            const tempKelvin = tempCelsius + 273.15;
+            const tempRankine = (tempCelsius + 273.15) * 9/5;
+            document.getElementById('fahrenheitResult').textContent = tempFahrenheit.toFixed(2);
+            document.getElementById('kelvinResult').textContent = tempKelvin.toFixed(2);
+            document.getElementById('rankineResult').textContent = tempRankine.toFixed(2);
+        }
+    </script>
+</body>
+</html>
